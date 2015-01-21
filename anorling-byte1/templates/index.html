@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Byte 1</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<h1>How could I wear this color?</h1>
+		<form action="search" method="POST">
+  			<p>Search for outfits by color:</p><input id="searchfield" name="search_term" value={{search}}>
+  			<input id="searchbutton" type="submit" value="Search">
+		</form>
+
+		<h2>Outfit Ideas</h2>
+		{% for item in feed %}
+		<a href="{{ item.link }}">{{ item.title }}</a><br>
+		{{item.description|safe}}
+		<br>
+		{% endfor %}
+	</div>
+</body>
+</html>
